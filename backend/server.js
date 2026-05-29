@@ -27,7 +27,8 @@ initializeSocket(server);
 
 // Middleware
 app.use(cors({
-  origin: '*', // In production, replace with frontend URL
+  // origin: '*', // In production, replace with frontend URL
+  origin: 'https://vibe-social-1.onrender.com',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
