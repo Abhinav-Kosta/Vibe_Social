@@ -12,7 +12,10 @@ export const SocketProvider = ({ children }) => {
 
   useEffect(() => {
     if (token && user) {
-      const socketConn = io('http://localhost:5000', {
+
+      const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'http://localhost:5000';
+
+      const socketConn = io(SOCKET_URL, {
         auth: {
           token: token,
         },

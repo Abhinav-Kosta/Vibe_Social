@@ -13,7 +13,11 @@ export const getReceiverSocketId = (receiverId) => {
 export const initializeSocket = (server) => {
   io = new Server(server, {
     cors: {
-      origin: '*', // We can restrict this to frontend URL in production
+      // origin: '*', // We can restrict this to frontend URL in production
+      origin: [
+          "http://localhost:5173",
+          "https://vibe-social-1.onrender.com",
+      ],
       methods: ['GET', 'POST'],
     },
   });
